@@ -88,8 +88,8 @@ int main(int argc, char *argv[])
 
         Info<< "Time = " << runTime.timeName() << nl << endl;
 
-        rhoEffLagrangian = coalParcels.rhoEff();
-        pDyn = 0.5*rho*magSqr(U);
+        //rhoEffLagrangian = coalParcels.rhoEff();
+        //pDyn = 0.5*rho*magSqr(U);
 
         coalParcels.evolve();
 
