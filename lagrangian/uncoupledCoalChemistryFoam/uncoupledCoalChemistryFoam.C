@@ -91,7 +91,9 @@ int main(int argc, char *argv[])
         //rhoEffLagrangian = coalParcels.rhoEff();
         //pDyn = 0.5*rho*magSqr(U);
 
+
         coalParcels.evolve();
+
 
         // #include "rhoEqn.H"
 
@@ -114,8 +116,7 @@ int main(int argc, char *argv[])
         //     }
         // }
 
-        rho = thermo.rho();
-
+        //rho = thermo.rho();
         runTime.write();
 
         Info<< "ExecutionTime = " << runTime.elapsedCpuTime() << " s"

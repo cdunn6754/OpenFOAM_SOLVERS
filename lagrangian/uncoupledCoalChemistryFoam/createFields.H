@@ -59,7 +59,7 @@ volScalarField rhoEffLagrangian
         runTime.timeName(),
         mesh,
         IOobject::NO_READ,
-        IOobject::NO_WRITE
+        IOobject::AUTO_WRITE
     ),
     mesh,
     dimensionedScalar("zero", dimDensity, 0.0)
