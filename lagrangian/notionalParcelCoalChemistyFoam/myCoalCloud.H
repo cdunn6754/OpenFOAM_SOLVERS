@@ -29,35 +29,39 @@ Description
 
 \*---------------------------------------------------------------------------*/
 
-#ifndef coalCloud_H
-#define coalCloud_H
+#ifndef mycoalCloud_H
+#define mycoalCloud_H
 
 #include "Cloud.H"
 #include "KinematicCloud.H"
 #include "ThermoCloud.H"
 #include "ReactingCloud.H"
 #include "ReactingMultiphaseCloud.H"
+#include "NotionalCloud.H"
 #include "myCoalParcel.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 namespace Foam
 {
-    typedef ReactingMultiphaseCloud
+  typedef NotionalCloud
+  <
+    ReactingMultiphaseCloud
     <
-        ReactingCloud
-        <
-            ThermoCloud
-            <
-                KinematicCloud
-                <
-                    Cloud
-                    <
-                        coalParcel
-                    >
-                >
-            >
+      ReactingCloud
+      <
+	ThermoCloud
+	<
+	  KinematicCloud
+	  <
+	    Cloud
+	    <
+	      coalParcel
+	      >
+	    >
+	  >
         >
+      >
     > coalCloud;
 }
 

@@ -903,7 +903,7 @@ $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/KinematicParcelI.H \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/KinematicParcelTrackingDataI.H \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/KinematicParcel.C \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/KinematicParcelIO.C \
-$(WM_PROJECT_DIR)/src/lagrangian/coalCombustion/lnInclude/coalCloud.H \
+myCoalCloud.H \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingCloud.H \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/reactingCloud.H \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingCloudI.H \
@@ -926,7 +926,11 @@ $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/DevolatilisationModelNew
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/SurfaceReactionModel.H \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/SurfaceReactionModel.C \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/SurfaceReactionModelNew.C \
-$(WM_PROJECT_DIR)/src/lagrangian/coalCombustion/lnInclude/coalParcel.H \
+/home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/Notional/lnInclude/NotionalCloud.H \
+/home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/Notional/lnInclude/notionalCloud.H \
+/home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/Notional/lnInclude/NotionalCloudI.H \
+/home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/Notional/lnInclude/NotionalCloud.C \
+myCoalParcel.H \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingParcel.H \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingParcelI.H \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingParcelTrackingDataI.H \
@@ -936,6 +940,10 @@ $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingMultiphaseParcel
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingMultiphaseParcelI.H \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingMultiphaseParcel.C \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingMultiphaseParcelIO.C \
+/home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/Notional/lnInclude/NotionalParcel.H \
+/home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/Notional/lnInclude/NotionalParcelI.H \
+/home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/Notional/lnInclude/NotionalParcel.C \
+/home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/Notional/lnInclude/NotionalParcelIO.C \
 $(WM_PROJECT_DIR)/src/combustionModels/lnInclude/psiCombustionModel.H \
 $(WM_PROJECT_DIR)/src/combustionModels/lnInclude/combustionModel.H \
 $(WM_PROJECT_DIR)/src/combustionModels/lnInclude/combustionModelI.H \
