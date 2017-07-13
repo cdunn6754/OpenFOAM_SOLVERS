@@ -62,11 +62,11 @@ namespace Foam
 	  >
 	>
       > 
-    >coalParcel;
+    > myCoalParcel;
 
 
     template<>
-    inline bool contiguous<coalParcel>()
+    inline bool contiguous<myCoalParcel>()
     {
         return false;
     }

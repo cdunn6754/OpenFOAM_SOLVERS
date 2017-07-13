@@ -1,5 +1,5 @@
-$(OBJECTS_DIR)/coalChemistryFoam.C.dep: \
-coalChemistryFoam.C \
+$(OBJECTS_DIR)/notionalCoalChemistryFoam.C.dep: \
+notionalCoalChemistryFoam.C \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvCFD.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/parRun.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Pstream.H \

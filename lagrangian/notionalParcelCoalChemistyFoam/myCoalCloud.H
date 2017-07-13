@@ -56,7 +56,7 @@ namespace Foam
 	  <
 	    Cloud
 	    <
-	      coalParcel
+	      myCoalParcel
 	      >
 	    >
 	  >
