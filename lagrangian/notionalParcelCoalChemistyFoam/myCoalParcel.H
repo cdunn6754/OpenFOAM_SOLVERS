@@ -40,7 +40,7 @@ SourceFiles
 #include "KinematicParcel.H"
 #include "ThermoParcel.H"
 #include "ReactingParcel.H"
-#include "ReactingMultiphaseParcel.H"
+#include "TemplateRMParcel.H"
 #include "NotionalParcel.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
@@ -49,7 +49,7 @@ namespace Foam
 {
   typedef NotionalParcel
   <
-    ReactingMultiphaseParcel
+    TemplateRMParcel
     <
       ReactingParcel
       <

@@ -936,10 +936,10 @@ $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingParcelI.H \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingParcelTrackingDataI.H \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingParcel.C \
 $(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingParcelIO.C \
-$(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingMultiphaseParcel.H \
-$(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingMultiphaseParcelI.H \
-$(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingMultiphaseParcel.C \
-$(WM_PROJECT_DIR)/src/lagrangian/intermediate/lnInclude/ReactingMultiphaseParcelIO.C \
+/home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/Notional/lnInclude/TemplateRMParcel.H \
+/home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/Notional/lnInclude/TemplateRMParcelI.H \
+/home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/Notional/lnInclude/TemplateRMParcel.C \
+/home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/Notional/lnInclude/TemplateRMParcelIO.C \
 /home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/Notional/lnInclude/NotionalParcel.H \
 /home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/Notional/lnInclude/NotionalParcelI.H \
 /home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/Notional/lnInclude/NotionalParcel.C \
