@@ -42,6 +42,10 @@ Description
 #include "localEulerDdtScheme.H"
 #include "fvcSmooth.H"
 
+
+#include "DaemCoalCloud.H"
+#include "DaemCoalParcel.H"
+
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 int main(int argc, char *argv[])

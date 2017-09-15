@@ -1,5 +1,5 @@
 Info<< "\nConstructing coal cloud" << endl;
-coalCloud coalParcels
+DaemCoalCloud coalParcels
 (
     "coalCloud1",
     rho,
