@@ -1,3 +1,4 @@
+coalParcel/makeCoalParcelSubmodels.C 
 DaemCoalChemistryFoam.C
 
 EXE = $(FOAM_USER_APPBIN)/DaemCoalChemistryFoam

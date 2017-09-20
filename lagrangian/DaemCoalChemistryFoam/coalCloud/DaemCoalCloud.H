@@ -36,14 +36,14 @@ Description
 #include "KinematicCloud.H"
 #include "ThermoCloud.H"
 #include "ReactingCloud.H"
-#include "ReactingMultiphaseCloud.H"
+#include "DaemReactingMultiphaseCloud.H"
 #include "DaemCoalParcel.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 namespace Foam
 {
-    typedef ReactingMultiphaseCloud
+    typedef DaemReactingMultiphaseCloud
     <
         ReactingCloud
         <

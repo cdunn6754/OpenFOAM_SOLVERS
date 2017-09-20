@@ -25,10 +25,9 @@ Class
     Foam::DaemCoalParcel
 
 Description
-    Definition of coal parcel
+    Definition of coal parcel, with daem functionality
 
 SourceFiles
-    CoalParcel.C
 
 \*---------------------------------------------------------------------------*/
 
