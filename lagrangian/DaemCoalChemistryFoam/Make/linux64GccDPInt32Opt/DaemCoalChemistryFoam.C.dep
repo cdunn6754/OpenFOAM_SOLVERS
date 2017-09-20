@@ -955,7 +955,7 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/pimpleControlI.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/localEulerDdtScheme.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/localEulerDdtScheme.C \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvcSmooth.H \
-DaemCoalCloud.H \
+/home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/DaemReactingMultiphase/lnInclude/DaemCoalCloud.H \
 /home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/DaemReactingMultiphase/lnInclude/DaemReactingMultiphaseCloud.H \
 /home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/DaemReactingMultiphase/lnInclude/daemReactingMultiphaseCloud.H \
 /home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/DaemReactingMultiphase/lnInclude/DaemReactingMultiphaseCloudI.H \
@@ -963,7 +963,7 @@ DaemCoalCloud.H \
 /home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/DaemReactingMultiphase/lnInclude/DaemDevolatilisationModel.H \
 /home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/DaemReactingMultiphase/lnInclude/DaemDevolatilisationModel.C \
 /home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/DaemReactingMultiphase/lnInclude/DaemDevolatilisationModelNew.C \
-DaemCoalParcel.H \
+/home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/DaemReactingMultiphase/lnInclude/DaemCoalParcel.H \
 /home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/DaemReactingMultiphase/lnInclude/DaemReactingMultiphaseParcel.H \
 /home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/DaemReactingMultiphase/lnInclude/DaemReactingMultiphaseParcelI.H \
 /home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/DaemReactingMultiphase/lnInclude/DaemReactingMultiphaseParcel.C \
