@@ -8,7 +8,6 @@ autoPtr<combustionModels::psiCombustionModel> combustion
 );
 
 psiReactionThermo& thermo = combustion->thermo();
-
 thermo.validate(args.executable(), "h", "e");
 
 SLGThermo slgThermo(mesh, thermo);
@@ -37,6 +36,21 @@ forAll(Y, i)
     fields.add(Y[i]);
 }
 fields.add(thermo.he());
+
+// Soot particle density field
+Info<< "\nReading field U\n" << endl;
+volScalarField Sd
+(
+    IOobject
+    (
+        "Sd",
+        runTime.timeName(),
+        mesh,
+        IOobject::MUST_READ,
+        IOobject::AUTO_WRITE
+    ),
+    mesh
+);
 
 volScalarField rho
 (
