@@ -1,5 +1,5 @@
-$(OBJECTS_DIR)/PcCoalChemistryFoam.C.dep: \
-PcCoalChemistryFoam.C \
+$(OBJECTS_DIR)/PcCoalChemistryFoam.cpp.dep: \
+PcCoalChemistryFoam.cpp \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvCFD.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/parRun.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Pstream.H \
@@ -997,8 +997,6 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/setDeltaT.H \
 rhoEqn.H \
 UEqn.H \
 YEqn.H \
-Ysoot.H \
-NsEqn.H \
 EEqn.H \
 pEqn.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/compressibleContinuityErrs.H \

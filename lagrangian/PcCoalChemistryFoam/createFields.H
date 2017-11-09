@@ -145,6 +145,20 @@ volScalarField dQ
     dimensionedScalar("dQ", dimEnergy/dimTime, 0.0)
 );
 
+// Create number of soot particles per kg field
+volScalarField Ns
+(
+    IOobject
+    (
+        "Ns",
+        runTime.timeName(),
+        mesh,
+        IOobject::MUST_READ,
+        IOobject::AUTO_WRITE
+    ),
+    mesh
+);
+
 #include "createMRF.H"
 #include "createClouds.H"
 #include "createRadiationModel.H"

@@ -18,20 +18,20 @@ tmp<fv::convectionScheme<scalar>> mvConvection
 
     forAll(Y, i)
     {
-        if (Y[i].name() != inertSpecie)
+        if ((Y[i].name() != inertSpecie) && (Y[i].name() !="SOOT"))
         {
             volScalarField& Yi = Y[i];
 
             fvScalarMatrix YiEqn
-            (
-                fvm::ddt(rho, Yi)
-              + mvConvection->fvmDiv(phi, Yi)
-              - fvm::laplacian(turbulence->muEff(), Yi)
-              ==
-                coalParcels.SYi(i, Yi)
-              + combustion->R(Yi)
-              + fvOptions(rho, Yi)
-            );
+                (
+                    fvm::ddt(rho, Yi)
+                    + mvConvection->fvmDiv(phi, Yi)
+                    - fvm::laplacian(turbulence->muEff(), Yi)
+                    ==
+                    coalParcels.SYi(i, Yi)
+                    + combustion->R(Yi)
+                    + fvOptions(rho, Yi)
+                );
 
             YiEqn.relax();
 
@@ -44,10 +44,14 @@ tmp<fv::convectionScheme<scalar>> mvConvection
             Yi.max(0.0);
             Yt += Yi;
         }
-        else
+      else if (Y[i].name() == inertSpecie)
         {
             inertIndex = i;
         }
+      else if (Y[i].name() == "SOOT")
+	{
+                #include "Ysoot.H"
+	}
     }
 
     Y[inertIndex] = scalar(1) - Yt;
