@@ -1,5 +1,6 @@
 {
-    Info << "We are solving for SOOT now" << endl;
+      // Soot Schmidt Number
+    const scalar SSc(60);
 
     // Soot mass fraction
     volScalarField& Ysoot = Y[i];
@@ -118,13 +119,13 @@
 
     // Arrhenius Coefficients for reactions (from Kronenburg 2006)
     const dimensionedScalar Ta1("Ta", dimTemperature, 21000);
-    const dimensionedScalar A1("A", dimless, 0.63e+04);
+    const dimensionedScalar A1("A1", dimless, 0.63e+04);
     const dimensionedScalar Ta2("Ta", dimTemperature, 12100);
-    const dimensionedScalar A2("A", dimless, 0.75e+03);
+    const dimensionedScalar A2("A2", dimless, 0.75e+03);
     const dimensionedScalar Ta3("Ta", dimTemperature, 19800);
-    const dimensionedScalar A3("A", dimless, 7.15e+02);
+    const dimensionedScalar A3("A3", dimless, 7.15e+02);
     const dimensionedScalar Ta4("Ta", dimTemperature, 0);
-    const dimensionedScalar A4("A", dimless, 0.36);
+    const dimensionedScalar A4("A4", dimless, 0.36);
 
 
     // Acetylene Mass Fraction
@@ -164,14 +165,13 @@
         (
             fvm::ddt(rho, Ysoot)
             + mvConvection->fvmDiv(phi, Ysoot)
-            - fvm::laplacian(turbulence->muEff(), Ysoot)
+            - fvm::laplacian(turbulence->muEff()/SSc, Ysoot)
             ==
             Sm
             + coalParcels.SYi(i, Ysoot)
             + combustion->R(Ysoot)
             + fvOptions(rho, Ysoot)
         );
-    Info << "Defined soot equation, going to NS" << endl;
 
     #include "NsEqn.H"
 
@@ -191,9 +191,7 @@
         - (R4*MwOH) * (runTime.deltaT()*mesh.V());
     H.primitiveFieldRef() = H
         + (R4*MwH) * (runTime.deltaT()*mesh.V());
-    
-            
-    Info<<"Got through the soot" << endl;
+   
 
     YsootEqn.relax();
 

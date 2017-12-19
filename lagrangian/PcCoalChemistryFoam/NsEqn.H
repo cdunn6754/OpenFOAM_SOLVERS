@@ -20,8 +20,6 @@
   const scalar sigB(1.38e-23);
   // Minumum carbon atoms for soot particle nucleation
   const scalar nc(60);
-  // Soot Schmidt Number
-  const scalar SSc(700);
   // Agglomeration constant (constants from Kronenburg 2006)
   const scalar Ca(9.0);
 
@@ -31,7 +29,6 @@
       - 2*Ca*dp.primitiveField()*pow(6*sigB*T.primitiveField()/rhos,0.5) 
       * pow(rho*Ns.primitiveField(),2);
   
-  Info << "Solving Ns Equation" << endl;
   fvScalarMatrix NsEqn
     (
      fvm::ddt(rho, Ns)
