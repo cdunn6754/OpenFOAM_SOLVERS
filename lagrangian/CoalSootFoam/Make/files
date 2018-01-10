@@ -1,3 +1,0 @@
-CoalSootFoam.C
-
-EXE = $(FOAM_USER_APPBIN)/CoalSootFoam

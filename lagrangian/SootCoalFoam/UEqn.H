@@ -8,7 +8,6 @@
      ==
         rho()*g
       + coalParcels.SU(U)
-      + limestoneParcels.SU(U)
       + fvOptions(rho, U)
     );
 

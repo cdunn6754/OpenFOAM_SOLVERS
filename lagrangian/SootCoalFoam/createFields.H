@@ -8,6 +8,7 @@ autoPtr<combustionModels::psiCombustionModel> combustion
 );
 
 psiReactionThermo& thermo = combustion->thermo();
+
 thermo.validate(args.executable(), "h", "e");
 
 SLGThermo slgThermo(mesh, thermo);
@@ -37,21 +38,6 @@ forAll(Y, i)
 }
 fields.add(thermo.he());
 
-// Soot particle density field
-Info<< "\nReading field U\n" << endl;
-volScalarField Sd
-(
-    IOobject
-    (
-        "Sd",
-        runTime.timeName(),
-        mesh,
-        IOobject::MUST_READ,
-        IOobject::AUTO_WRITE
-    ),
-    mesh
-);
-
 volScalarField rho
 (
     IOobject
@@ -64,6 +50,7 @@ volScalarField rho
     ),
     thermo.rho()
 );
+
 
 // lagrangian effective density field - used externally (optional)
 volScalarField rhoEffLagrangian
@@ -158,6 +145,24 @@ volScalarField dQ
     mesh,
     dimensionedScalar("dQ", dimEnergy/dimTime, 0.0)
 );
+
+// Create number of soot particles per kg field
+volScalarField Ns
+(
+    IOobject
+    (
+        "Ns",
+        runTime.timeName(),
+        mesh,
+        IOobject::MUST_READ,
+        IOobject::AUTO_WRITE
+    ),
+    mesh
+);
+
+// Create the system for solving the soot equations
+#include "SootEulerImplicit.H"
+EulerImplicitSystem sootSystem(thermo,composition,Ns,rho);
 
 #include "createMRF.H"
 #include "createClouds.H"

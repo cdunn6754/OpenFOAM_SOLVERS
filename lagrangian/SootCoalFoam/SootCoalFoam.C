@@ -22,10 +22,10 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 Application
-    coalChemistryFoam
+    DaemCoalChemistryFoam
 
 Description
-    Transient solver for compressible, turbulent flow, with coal and limestone
+    Transient solver for compressible, turbulent flow, with coal
     particle clouds, an energy source, and combustion.
 
 \*---------------------------------------------------------------------------*/
@@ -33,7 +33,7 @@ Description
 #include "fvCFD.H"
 #include "turbulentFluidThermoModel.H"
 #include "basicThermoCloud.H"
-#include "myCoalCloud.H"
+#include "coalCloud.H"
 #include "psiCombustionModel.H"
 #include "fvOptions.H"
 #include "radiationModel.H"
@@ -41,6 +41,12 @@ Description
 #include "pimpleControl.H"
 #include "localEulerDdtScheme.H"
 #include "fvcSmooth.H"
+
+
+#include "PcCoalCloud.H"
+#include "PcCoalParcel.H"
+// solver class for soot 2 equation model
+#include "SootEulerImplicit.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -88,12 +94,10 @@ int main(int argc, char *argv[])
 
         Info<< "Time = " << runTime.timeName() << nl << endl;
 
-        rhoEffLagrangian = coalParcels.rhoEff() + limestoneParcels.rhoEff();
+        rhoEffLagrangian = coalParcels.rhoEff();
         pDyn = 0.5*rho*magSqr(U);
 
         coalParcels.evolve();
-
-        limestoneParcels.evolve();
 
         #include "rhoEqn.H"
 

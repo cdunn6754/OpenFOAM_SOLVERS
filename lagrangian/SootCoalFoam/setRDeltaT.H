@@ -78,7 +78,7 @@ License
         (
             mag
             (
-               (coalParcels.hsTrans() + limestoneParcels.hsTrans())
+               (coalParcels.hsTrans())
               /(mesh.V()*runTime.deltaT())
              + combustion->Sh()()
             )

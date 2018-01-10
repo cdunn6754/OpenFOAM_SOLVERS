@@ -20,7 +20,6 @@
         rho*(U&g)
       + combustion->Sh()
       + coalParcels.Sh(he)
-      + limestoneParcels.Sh(he)
       + radiation->Sh(thermo)
       + fvOptions(rho, he)
     );
