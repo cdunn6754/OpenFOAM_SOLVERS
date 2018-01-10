@@ -160,8 +160,7 @@ volScalarField Ns
     mesh
 );
 
-// Create the system for solving the soot equations
-#include "SootEulerImplicit.H"
+// Create the system for solving the soot
 EulerImplicitSystem sootSystem(thermo,composition,Ns,rho);
 
 #include "createMRF.H"

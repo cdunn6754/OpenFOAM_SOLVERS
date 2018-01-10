@@ -46,7 +46,7 @@ Description
 #include "PcCoalCloud.H"
 #include "PcCoalParcel.H"
 // solver class for soot 2 equation model
-#include "SootEulerImplicit.H"
+#include "EulerImplicitSystem.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

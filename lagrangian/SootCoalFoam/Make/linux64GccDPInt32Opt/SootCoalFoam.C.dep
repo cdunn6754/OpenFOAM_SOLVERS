@@ -968,7 +968,7 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvcSmooth.H \
 /home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/PcReactingMultiphase/lnInclude/PcReactingMultiphaseParcelI.H \
 /home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/PcReactingMultiphase/lnInclude/PcReactingMultiphaseParcel.C \
 /home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/PcReactingMultiphase/lnInclude/PcReactingMultiphaseParcelIO.C \
-SootEulerImplicit.H \
+/home/cdunn3/OpenFOAM/cdunn3-4.1/src/lagrangian/EulerImplicitSystem/lnInclude/EulerImplicitSystem.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/postProcess.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/addRegionOption.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/addFunctionObjectOptions.H \

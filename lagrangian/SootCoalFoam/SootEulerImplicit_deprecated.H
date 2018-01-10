@@ -190,6 +190,7 @@ class EulerImplicitSystem
         const scalar Ysafe = Foam::max(Y + Foam::SMALL, Foam::SMALL);        
         const scalar Nsafe = Foam::max(N + Foam::SMALL, Foam::SMALL);
 
+        // set the jacobian entries
         J(0, 0) = 1 - dt*(C_1_2 - C_1_3 - C_1_4) *
             (2./3.) * Foam::pow(Ysafe,(-1./3.)) * Foam::pow(N,(1./3.));
 
@@ -203,7 +204,7 @@ class EulerImplicitSystem
             Foam::pow(Y,(1./6.)) * (11./6.) * Foam::pow(Nsafe,(5./6.));
 
          
-        // now invert
+        // now invert the jacobian
         this->invertJacobian(J,invJ);
 
     }
@@ -265,21 +266,29 @@ class EulerImplicitSystem
     )
         {
 
+            // Counter for number of cells in which
+            // the newton method fails to converge
+            label newton_method_failures(0);
+
             // loop through all cells
             forAll(Y_s, cellNumber)
             {
-                Info << "\n\nNew cell" << endl;
+                //Info << "\n\nNew cell" << endl;
 
                 // Reset the values of 'constants'
                 // for this cell
                 this->setConstants(cellNumber);
 
-                // set initial values for this cell
+                // set initial values for this cell (to remain const)
+                const scalar Y_0 = Y_s[cellNumber];
+                const scalar N_0 = N_s[cellNumber];
+                
+                // set intial values for this cell
                 scalar Y_i = Y_s[cellNumber];
                 scalar N_i = N_s[cellNumber];
 
-                Info << "Y_next, N_next: " << Y_i
-                    << ", " << N_i << endl;
+                // Info << "Y_next, N_next: " << Y_i
+                //     << ", " << N_i << endl;
 
                 // Perform an explicit euler step to get guess
                 // updates Y_i and N_i
@@ -300,6 +309,7 @@ class EulerImplicitSystem
                 label converged(0);
 
                 label newton_iteration(0);
+
                 // Newton method iterations
                 while( !converged && (newton_iteration <= 10)) 
                 {
@@ -337,31 +347,33 @@ class EulerImplicitSystem
 
                     // increment the iteration counter
                     newton_iteration++;
-                }
+                }// end Newton method loop
 
                 // If we did not converge in 10 iterations
                 if (newton_iteration > 10)
                 {
-                    //Info << "Newton Method failed to converge within 10 iterations" 
-                    //  << endl;
+                    // increment failure counter
+                    newton_method_failures ++;
 
-                    FatalErrorInFunction
-                        << "Newton Method did not converge" 
-                            << abort(FatalError);
+                    // FatalErrorInFunction
+                    //     << "Newton Method did not converge" 
+                    //         << abort(FatalError);
 
-                    if (Y_i <= 0 || N_i <= 0)
-                    {
-                        Y_i = 0.0;
-                        N_i = 0.0;
-                    }
+                    // if not converged set it as it was previously
+                    // bad idea? 
+                    Y_i = Y_0;
+                    N_i = N_0;
+
                 }
                 
                 // set source over the timestep for this cell
                 this->Y_source[cellNumber] = -(Y_i - Y_s[cellNumber])/dt;
                 this->N_source[cellNumber] = -(N_i - N_s[cellNumber])/dt;
 
-            }
-
+            }// end for loop through cells
+            
+            Info << "The soot Newton's Method failed to converge in "
+                << newton_method_failures << " cells." << endl;
         }
 public: 
 
